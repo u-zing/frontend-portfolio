@@ -1,0 +1,32 @@
+header {
+  position: absolute;
+  color: black;
+  background-color: red;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 1rem;
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.nav__list {
+  display: flex;
+}
+.nav__list-item {
+  margin-right: 5px;
+  padding: 10px;
+}
+header button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.nav__list-item button {
+  font-size: 1.2rem;
+}
