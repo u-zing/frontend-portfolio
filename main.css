@@ -1,0 +1,156 @@
+/* 기본 설정 */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-home: #1e272e;
+  --color-about: #485460;
+  --color-project: #808e9b;
+  --color-contact: #d2dae2;
+}
+
+body {
+  font-weight: 300;
+  font-family: "Raleway", sans-serif;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* 라디오 버튼 숨기기 */
+#intro input {
+  display: none;
+}
+
+/* 탭 컨테이너 */
+.tab-container {
+  width: 100%;
+  height: 100vh;
+  transition: all 500ms;
+  transform-style: preserve-3d; /* 3D 변환이 필요한 핵심 요소 */
+  position: relative;
+}
+
+/* 탭 콘텐츠 공통 스타일 */
+.tab-container section {
+  position: absolute;
+  top: 100vh; /* 기본적으로 숨김 */
+  width: 100%;
+  height: 100vh;
+  transition: top 500ms;
+}
+
+.tab-container__home {
+  background: var(--color-home);
+  z-index: 99;
+}
+.tab-container__about {
+  background: var(--color-about);
+  z-index: 98;
+}
+.tab-container__project {
+  background: var(--color-project);
+  z-index: 97;
+}
+.tab-container__contact {
+  background: var(--color-contact);
+  z-index: 96;
+}
+
+/* 제목 스타일 */
+.tab-container section h1 {
+  margin: 0;
+  font-size: 64px;
+  transform: translate(0, 40vh);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  transition: transform 500ms;
+}
+
+/* 클릭 영역 */
+.tab-label {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+/* 햄버거 메뉴 */
+.tab-menu {
+  position: fixed;
+  top: 20px;
+  left: 25px;
+  z-index: 1000;
+}
+
+.tab-menu__toggle,
+.tab-menu__item {
+  display: block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.tab-menu i {
+  font-size: 30px;
+  color: rgb(0, 0, 0);
+  transition: font-size 200ms;
+}
+.tab-menu__toggle i {
+  color: white;
+}
+.tab-menu i:hover {
+  font-size: 32px;
+}
+
+.tab-menu__item {
+  display: none;
+}
+
+/* 활성 탭 표시 */
+input[type="radio"]:checked + section {
+  top: 0;
+}
+
+/* 메뉴 열림 상태 */
+#menu-toggle:checked ~ .tab-container {
+  transform: scale(0.65) translateY(-18%);
+}
+
+#menu-toggle:checked ~ .tab-container section {
+  cursor: pointer;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+}
+
+#menu-toggle:checked ~ .tab-container section h1 {
+  transform: scale(0.5);
+}
+
+/* 메뉴 아이콘 전환 */
+#menu-toggle:checked ~ .tab-menu .tab-menu__toggle {
+  display: none;
+}
+#menu-toggle:checked ~ .tab-menu .tab-menu__item {
+  display: block;
+}
+
+/* 탭 스택 위치 */
+#menu-toggle:checked ~ .tab-container .tab-container__contact {
+  top: 12px;
+}
+#menu-toggle:checked ~ .tab-container .tab-container__project {
+  top: 72px;
+}
+#menu-toggle:checked ~ .tab-container .tab-container__about {
+  top: 132px;
+}
+#menu-toggle:checked ~ .tab-container .tab-container__home {
+  top: 192px;
+}
+
+/* 호버시 4px 위로 */
+#menu-toggle:checked ~ .tab-container section:hover {
+  transform: translateY(-4px);
+}

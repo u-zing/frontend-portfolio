@@ -8,59 +8,98 @@
     />
     <link
       rel="stylesheet"
-      href="styles/main.css"
+      href="main.css"
     />
     <link
       rel="stylesheet"
-      href="reset.css"
+      href="styles/reset.css"
     />
     <title>Frontend Portfolio - zing</title>
   </head>
   <body>
-    <header class="header">
-      <div class="header__container">
-        <h1 class="header__logo"><button>ZING</button></h1>
-        <nav class="header__nav">
-          <ul class="nav__list">
-            <li class="nav__list-item"><button>ABOUT</button></li>
-            <li class="nav__list-item"><button>FEATURES</button></li>
-            <li class="nav__list-item"><button>PORTFOLIO</button></li>
-            <li class="nav__list-item"><button>CONTACT</button></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <form id="intro">
+      <!-- 메뉴 토글용 라디오 버튼 -->
+      <input
+        type="radio"
+        name="tab"
+        id="menu-toggle"
+        checked
+      />
 
-    <main>
-      <div class="main__container">
-        <h4 class="main__welcome">WELCOME</h4>
-        <h2 class="main__title">I'M A<span>FRONT-END DEVELOPER</span></h2>
-        <p class="main__description">
-          성실함과 책임감으로 꾸준히 성장중인 신입 프론트엔드 개발자
-          임유진입니다.
-        </p>
-      </div>
-      <div class="main__icon">
-        <i class="fa-solid fa-computer-mouse"></i>
-      </div>
-    </main>
+      <div class="tab-container">
+        <input
+          type="radio"
+          name="tab"
+          id="tab-home"
+        />
+        <section class="tab-container__home">
+          <h1>Home</h1>
+          <label
+            for="tab-home"
+            class="tab-label"
+          ></label>
+        </section>
 
-    <section class="about">
-      <div class="about__container">
-        <div class="about__title"><h2>ABOUT</h2></div>
-        <div class="about__img">
-          <img
-            src="imges/me.jpg"
-            alt=""
-          />
-        </div>
-        <div class="about__description"></div>
+        <input
+          type="radio"
+          name="tab"
+          id="tab-about"
+        />
+        <section class="tab-container__about">
+          <h1>About</h1>
+          <label
+            for="tab-about"
+            class="tab-label"
+          ></label>
+        </section>
+
+        <input
+          type="radio"
+          name="tab"
+          id="tab-project"
+        />
+        <section class="tab-container__project">
+          <h1>PROJECTS</h1>
+          <label
+            for="tab-project"
+            class="tab-label"
+          ></label>
+        </section>
+
+        <input
+          type="radio"
+          name="tab"
+          id="tab-contact"
+        />
+        <section class="tab-container__contact">
+          <h1>Contact</h1>
+          <label
+            for="tab-contact"
+            class="tab-label"
+          ></label>
+        </section>
       </div>
-    </section>
+
+      <nav class="tab-menu">
+        <label
+          for="menu-toggle"
+          class="tab-menu__toggle"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </label>
+        <label
+          for="tab-home"
+          class="tab-menu__item"
+        >
+          <i class="fa-solid fa-home"></i>
+        </label>
+      </nav>
+    </form>
+
+    <script
+      src="https://kit.fontawesome.com/9076bbc1a6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
   </body>
-  <script
-    src="https://kit.fontawesome.com/9076bbc1a6.js"
-    crossorigin="anonymous"
-  ></script>
-  <script src="index.js"></script>
 </html>
