@@ -1,0 +1,130 @@
+@media (max-width: 768px) {
+  #menu-toggle:checked ~ .tab-container section h1 {
+    transform: translateX(-50%) scale(0.5);
+    top: 10px;
+    font-size: 3rem;
+  }
+  .portfolio-title {
+    font-size: 2rem;
+  }
+
+  .folder-icon {
+    font-size: 8rem;
+  }
+
+  .tab-container section h1 {
+    font-size: 2.5rem;
+    padding: 2rem 1rem 1rem;
+  }
+
+  .content {
+    padding: 0 1rem 2rem;
+  }
+
+  #menu-toggle:checked ~ .tab-container {
+    transform: scale(0.8) translateY(-8%);
+  }
+
+  .tab-menu {
+    top: 20px;
+    left: 20px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .back-button {
+    top: 20px;
+    right: 20px;
+  }
+
+  .about__main {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .about__main-sub {
+    min-width: auto;
+  }
+
+  .about__list {
+    grid-template-columns: 1fr;
+  }
+
+  .about__main-image img {
+    width: 200px;
+    height: 250px;
+  }
+}
+@media (max-width: 480px) {
+  .skills__grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .skill__item span {
+    font-size: 0.8rem;
+  }
+}
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .skills__container {
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+
+  .skills__title {
+    font-size: 2rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .skills__categories {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .skills__category {
+    padding: 1.5rem;
+  }
+
+  .skills__category-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .skills__category-header i {
+    font-size: 2rem;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .skill__item {
+    padding: 0.8rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .skill__item i {
+    font-size: 1.6rem;
+  }
+
+  .skill__item span {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills__grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+
+  .skill__item span {
+    font-size: 0.8rem;
+  }
+}

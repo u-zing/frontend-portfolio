@@ -1,0 +1,47 @@
+/* 탭 메뉴 */
+.tab-menu {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 1000;
+}
+
+.tab-menu__toggle,
+.tab-menu__item {
+  display: block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-menu i {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  transition: all 200ms ease;
+}
+
+.tab-menu__toggle:hover,
+.tab-menu__item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.tab-menu__toggle:hover i,
+.tab-menu__item:hover i {
+  transform: scale(1.2);
+}
+
+.tab-menu__item {
+  display: none;
+  opacity: 0;
+  transform: translateX(-20px);
+}

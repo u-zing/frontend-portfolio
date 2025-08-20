@@ -1,0 +1,201 @@
+/* Skills Section Styles */
+.skills__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+}
+
+.skills__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0 3rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Projects Section Styles */
+.projects__container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.projects__title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0 3rem;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.skills__categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.skills__category {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.skills__category:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.skills__category-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.skills__category-header i {
+  font-size: 1.8rem;
+  color: #64b5f6;
+  min-width: 30px;
+}
+
+.skills__category-header h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.skills__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.skill__item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill__item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.skill__item i {
+  font-size: 1.4rem;
+  min-width: 20px;
+  color: #81c784;
+}
+
+.skill__item span {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: white;
+  opacity: 0.9;
+}
+
+.skill__item small {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  font-weight: 300;
+}
+
+/* 숙련도별 스타일 */
+.skill__item.confident {
+  background: rgba(100, 181, 246, 0.1);
+  border: 2px solid rgba(100, 181, 246, 0.3);
+}
+
+.skill__item.confident:hover {
+  background: rgba(100, 181, 246, 0.15);
+  border-color: rgba(100, 181, 246, 0.5);
+}
+
+.skill__item.learning {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.2);
+  opacity: 0.8;
+}
+
+.skill__item.learning:hover {
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 1;
+}
+
+/* 카테고리별 아이콘 색상 */
+.skills__category:nth-child(1) .skills__category-header i {
+  color: #ff7043; /* Frontend - 주황색 */
+}
+
+.skills__category:nth-child(1) .skill__item i {
+  color: #ff8a65;
+}
+
+.skills__category:nth-child(2) .skills__category-header i {
+  color: #42a5f5; /* Tools - 파란색 */
+}
+
+.skills__category:nth-child(2) .skill__item i {
+  color: #64b5f6;
+}
+
+/* 특정 기술 아이콘 색상 오버라이드 */
+.skill__item .fa-html5 {
+  color: #e44d26 !important;
+}
+
+.skill__item .fa-css3-alt {
+  color: #1572b6 !important;
+}
+
+.skill__item .fa-js {
+  color: #f7df1e !important;
+}
+
+.skill__item .fa-react {
+  color: #61dafb !important;
+}
+
+/* TypeScript 스타일 */
+.skill__item:has(span:contains("TypeScript")) .fa-js {
+  color: #3178c6 !important;
+}
+
+.skill__item .fa-git-alt {
+  color: #f05032 !important;
+}
+
+.skill__item .fa-github {
+  color: white !important;
+}
+
+.projects__container .bar {
+  width: 70%;
+}

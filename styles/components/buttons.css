@@ -1,0 +1,35 @@
+/* Back Button */
+.back-button {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1001;
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.back-button.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.back-button:hover {
+  background: rgb(164, 164, 164);
+  transform: scale(1.1);
+}
+
+.back-button i {
+  color: rgb(255, 109, 109);
+  font-size: 18px;
+}

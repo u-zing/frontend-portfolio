@@ -1,0 +1,149 @@
+.intro-container {
+  text-align: center;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  position: relative;
+}
+
+.intro-container.hidden {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+.folder-icon {
+  font-size: 12rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+  position: relative;
+}
+
+.folder-icon:hover {
+  transform: translateY(-10px) scale(1.1);
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+}
+
+.folder-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.folder-icon:hover::after {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4) 0%,
+    transparent 70%
+  );
+}
+
+.portfolio-title {
+  font-size: 4rem;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.click-hint {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.6);
+  animation: pulse 1.7s infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.about__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 70px auto;
+  padding: 30px;
+  max-width: 1100px; /* 원하는 최대 크기 */
+  width: 100%; /* 화면 크기에 맞게 */
+  border-radius: 30px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+.about__title {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+.about__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 양쪽 배치 */
+  gap: 40px; /* 간격 추가 */
+}
+.about__main-image img {
+  border-radius: 40px;
+  width: 200px;
+  height: 250px;
+  margin: 20px;
+}
+.about__main-sub {
+  line-height: 1.6;
+  max-width: 630px;
+}
+.about__main-sub h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.about__main-sub h4 {
+  font-size: 1rem;
+}
+.bar {
+  margin: 20px;
+  height: 3px;
+  background-color: rgb(187, 187, 187);
+  width: 60%;
+}
+.about__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3열 */
+  gap: 20px; /* 칸 사이 여백 */
+  max-width: 800px; /* 원하는 크기 제한 */
+  margin: 0 auto; /* 가운데 정렬 */
+}
+.about__list-item {
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 20px;
+}
+.about__list-item i {
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.466);
+}
+.about__list-item div {
+  line-height: 1.5;
+}

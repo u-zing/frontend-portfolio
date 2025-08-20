@@ -1,156 +1,315 @@
-/* 기본 설정 */
+@import url(styles/reset.css);
+@import url(styles/nav.css);
+
+/* Pages */
+@import url(styles/pages/about.css);
+@import url(styles/pages/intro.css);
+@import url(styles/pages/project.css);
+@import url(styles/pages/responsive.css);
+@import url(styles/pages/skills.css);
+
+@import url(styles/components/buttons.css);
+
 * {
   box-sizing: border-box;
 }
 
-:root {
-  --color-home: #1e272e;
-  --color-about: #485460;
-  --color-project: #808e9b;
-  --color-contact: #d2dae2;
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: white;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
 }
 
-body {
+/* Portfolio Container */
+.portfolio-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(100vh);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 50;
+}
+
+.portfolio-container.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Portfolio Styles */
+.portfolio-content {
   font-weight: 300;
-  font-family: "Raleway", sans-serif;
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, sans-serif;
   background: #fff;
   overflow: hidden;
+  min-height: 100vh;
 }
 
-/* 라디오 버튼 숨기기 */
-#intro input {
-  display: none;
+.portfolio-content input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* 탭 컨테이너 */
 .tab-container {
   width: 100%;
-  height: 100vh;
-  transition: all 500ms;
-  transform-style: preserve-3d; /* 3D 변환이 필요한 핵심 요소 */
+  min-height: 100vh;
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
   position: relative;
 }
 
-/* 탭 콘텐츠 공통 스타일 */
+/* 섹션 기본 설정 */
 .tab-container section {
   position: absolute;
-  top: 100vh; /* 기본적으로 숨김 */
+  top: 100vh;
+  left: 0;
   width: 100%;
   height: 100vh;
-  transition: top 500ms;
+  min-height: 100vh;
+  transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* 스크롤바 스타일 */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
+.tab-container section::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tab-container section::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tab-container section::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.tab-container section::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* 개별 섹션이 활성화될 때 전체 화면으로 */
+input[type="radio"]:checked + section {
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  z-index: 1000;
+  justify-content: flex-start;
+}
+
+/* 섹션별 배경색 */
 .tab-container__home {
-  background: var(--color-home);
+  background: linear-gradient(135deg, #1e272e, #2c3e50);
   z-index: 99;
 }
+
 .tab-container__about {
-  background: var(--color-about);
+  background: linear-gradient(135deg, #485460, #34495e);
   z-index: 98;
 }
+
 .tab-container__project {
-  background: var(--color-project);
+  background: linear-gradient(135deg, #808e9b, #7f8c8d);
   z-index: 97;
 }
+
 .tab-container__contact {
-  background: var(--color-contact);
+  background: linear-gradient(135deg, #d2dae2, #bdc3c7);
   z-index: 96;
+  color: #2c3e50;
 }
 
-/* 제목 스타일 */
+/* Contact 섹션 스크롤바 색상 */
+.tab-container__contact::-webkit-scrollbar-thumb {
+  background: rgba(44, 62, 80, 0.3);
+}
+
+.tab-container__contact::-webkit-scrollbar-thumb:hover {
+  background: rgba(44, 62, 80, 0.5);
+}
+
+/* 섹션 제목 */
 .tab-container section h1 {
-  margin: 0;
-  font-size: 64px;
-  transform: translate(0, 40vh);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 600;
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
-  color: rgba(255, 255, 255, 0.85);
-  transition: transform 500ms;
+  padding: 4rem 2rem 2rem;
+  margin: 0;
+}
+#menu-toggle:checked ~ .tab-container section h1 {
+  transform: scale(0.6);
+  padding: 1rem; /* 기존 설정 */
+  position: absolute;
+  top: -30px;
+  transform: translateX(-50%) scale(0.6);
+  width: 100%;
+}
+/* 컨텐츠 영역 */
+.content {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 500ms ease;
 }
 
-/* 클릭 영역 */
+input[type="radio"]:checked + section .content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tab-container section p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+/* 레이블 - 개별 섹션 클릭 시에는 숨김 */
 .tab-label {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100vh;
-  display: block;
-}
-
-/* 햄버거 메뉴 */
-.tab-menu {
-  position: fixed;
-  top: 20px;
-  left: 25px;
-  z-index: 1000;
-}
-
-.tab-menu__toggle,
-.tab-menu__item {
-  display: block;
-  width: 35px;
-  height: 35px;
   cursor: pointer;
-  transition: all 200ms;
+  z-index: 5;
 }
 
-.tab-menu i {
-  font-size: 30px;
-  color: rgb(0, 0, 0);
-  transition: font-size 200ms;
-}
-.tab-menu__toggle i {
-  color: white;
-}
-.tab-menu i:hover {
-  font-size: 32px;
-}
-
-.tab-menu__item {
+/* 개별 섹션이 활성화되면 레이블 숨김 */
+input[type="radio"]:checked + section .tab-label {
   display: none;
 }
 
-/* 활성 탭 표시 */
-input[type="radio"]:checked + section {
-  top: 0;
-}
-
-/* 메뉴 열림 상태 */
+/* 메뉴 토글 상태 */
 #menu-toggle:checked ~ .tab-container {
-  transform: scale(0.65) translateY(-18%);
+  transform: scale(0.7) translateY(-12%);
 }
 
 #menu-toggle:checked ~ .tab-container section {
   cursor: pointer;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 85vh;
+  min-height: 60vh;
+  justify-content: center;
+}
+
+/* 메뉴 토글 상태에서 컨텐츠 숨김 - 핵심 추가 부분 */
+#menu-toggle:checked ~ .tab-container section .content {
+  display: none !important;
+  opacity: 0 !important;
+}
+
+/* 메뉴 토글 상태에서 main__icon 숨김 */
+#menu-toggle:checked ~ .tab-container section .main__icon {
+  display: none !important;
+}
+
+/* 메뉴 토글 상태에서 about__container 숨김 */
+#menu-toggle:checked ~ .tab-container section .about__container {
+  display: none !important;
 }
 
 #menu-toggle:checked ~ .tab-container section h1 {
-  transform: scale(0.5);
+  transform: scale(0.6);
+  padding: 1rem;
 }
 
-/* 메뉴 아이콘 전환 */
 #menu-toggle:checked ~ .tab-menu .tab-menu__toggle {
   display: none;
 }
+
 #menu-toggle:checked ~ .tab-menu .tab-menu__item {
-  display: block;
+  display: flex;
+  animation: slideIn 0.3s ease forwards;
 }
 
-/* 탭 스택 위치 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 메뉴 토글 시 섹션 위치 */
 #menu-toggle:checked ~ .tab-container .tab-container__contact {
-  top: 12px;
-}
-#menu-toggle:checked ~ .tab-container .tab-container__project {
-  top: 72px;
-}
-#menu-toggle:checked ~ .tab-container .tab-container__about {
-  top: 132px;
-}
-#menu-toggle:checked ~ .tab-container .tab-container__home {
-  top: 192px;
+  top: 20px;
 }
 
-/* 호버시 4px 위로 */
+#menu-toggle:checked ~ .tab-container .tab-container__project {
+  top: 120px;
+}
+
+#menu-toggle:checked ~ .tab-container .tab-container__home {
+  top: 220px;
+}
+
 #menu-toggle:checked ~ .tab-container section:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+.section-footer {
+  margin-top: auto;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  animation: fadeInUp 1s ease;
+  line-height: 1.6;
+}
+
+.tab-container__contact .section-footer {
+  color: #2c3e50;
+  border-top-color: rgba(44, 62, 80, 0.2);
+}
+
+#menu-toggle:checked ~ .tab-container section .section-footer {
+  display: none !important;
+}
+
+/* Footer 애니메이션 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 반응형 Footer */
+@media (max-width: 768px) {
+  .section-footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.8rem;
+  }
 }

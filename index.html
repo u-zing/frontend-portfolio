@@ -6,100 +6,337 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
+    <title>Frontend Portfolio - zing</title>
     <link
       rel="stylesheet"
       href="main.css"
     />
-    <link
-      rel="stylesheet"
-      href="styles/reset.css"
-    />
-    <title>Frontend Portfolio - zing</title>
   </head>
   <body>
-    <form id="intro">
-      <!-- 메뉴 토글용 라디오 버튼 -->
-      <input
-        type="radio"
-        name="tab"
-        id="menu-toggle"
-        checked
-      />
-
-      <div class="tab-container">
-        <input
-          type="radio"
-          name="tab"
-          id="tab-home"
-        />
-        <section class="tab-container__home">
-          <h1>Home</h1>
-          <label
-            for="tab-home"
-            class="tab-label"
-          ></label>
-        </section>
-
-        <input
-          type="radio"
-          name="tab"
-          id="tab-about"
-        />
-        <section class="tab-container__about">
-          <h1>About</h1>
-          <label
-            for="tab-about"
-            class="tab-label"
-          ></label>
-        </section>
-
-        <input
-          type="radio"
-          name="tab"
-          id="tab-project"
-        />
-        <section class="tab-container__project">
-          <h1>PROJECTS</h1>
-          <label
-            for="tab-project"
-            class="tab-label"
-          ></label>
-        </section>
-
-        <input
-          type="radio"
-          name="tab"
-          id="tab-contact"
-        />
-        <section class="tab-container__contact">
-          <h1>Contact</h1>
-          <label
-            for="tab-contact"
-            class="tab-label"
-          ></label>
-        </section>
+    <!--인트로 화면-->
+    <div class="intro-container">
+      <div class="folder-icon">
+        <i class="fas fa-folder"></i>
       </div>
+      <h1 class="portfolio-title">PORTFOLIO.zing</h1>
+      <p class="click-hint">📁 폴더를 클릭하여 포트폴리오를 열어보세요</p>
+    </div>
 
-      <nav class="tab-menu">
-        <label
-          for="menu-toggle"
-          class="tab-menu__toggle"
-        >
-          <i class="fa-solid fa-bars"></i>
-        </label>
-        <label
-          for="tab-home"
-          class="tab-menu__item"
-        >
-          <i class="fa-solid fa-home"></i>
-        </label>
-      </nav>
-    </form>
+    <!--나가기 버튼-->
+    <div class="back-button menu-button">
+      <i class="fas fa-times"></i>
+    </div>
 
+    <div class="portfolio-container">
+      <div class="portfolio-content">
+        <div id="intro">
+          <input
+            type="radio"
+            name="tab"
+            id="menu-toggle"
+            checked
+          />
+
+          <div class="tab-container">
+            <!-- Home 섹션 -->
+            <input
+              type="radio"
+              name="tab"
+              id="tab-home"
+            />
+            <section class="tab-container__home">
+              <h1>ABOUT ME</h1>
+              <div class="content main">
+                <h2 class="main__title">
+                  I'M A<span> FRONT-END DEVELOPER</span>
+                </h2>
+                <p class="main__description">
+                  성실함과 책임감으로 꾸준히 성장중인 신입 프론트엔드 개발자
+                  임유진입니다.
+                </p>
+              </div>
+              <div class="main__icon">
+                <i class="fa-solid fa-computer-mouse"></i>
+                <span>scroll</span>
+              </div>
+              <div class="about__container">
+                <div class="about__main">
+                  <div class="about__main-image">
+                    <img
+                      src="imges/증명4.jpg"
+                      alt="프로필 사진"
+                    />
+                  </div>
+                  <div class="about__main-sub">
+                    <h2>안녕하십니까 프론트엔드 지원자 임유진입니다.</h2>
+                    <h4>
+                      비전공자로 시작했지만 1년 6개월간의 집중적인 학습과 실전
+                      프로젝트를 통해 프론트엔드 개발자로서의 역량을
+                      다져왔습니다. 저는 빠르게 변화하는 프론트엔드 환경 속에서
+                      꾸준히 학습하고, 팀에 긍정적인 영향을 주는 개발자가 되고자
+                      합니다. 실력을 겸비한 개발자가 되기 위해 끊임없이
+                      도전하며, 회사와 함께 성장하는 임유진이 되겠습니다.
+                    </h4>
+                  </div>
+                </div>
+                <div class="bar"></div>
+                <div class="about__list">
+                  <div class="about__list-item card">
+                    <i class="fa-solid fa-user"></i>
+                    <div>
+                      <h2>이름</h2>
+                      <h3>임유진</h3>
+                    </div>
+                  </div>
+                  <div class="about__list-item card">
+                    <i class="fa-solid fa-calendar"></i>
+                    <div>
+                      <h2>생년월일</h2>
+                      <h3>1998.08.29</h3>
+                    </div>
+                  </div>
+                  <div class="about__list-item card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                      <h2>위치</h2>
+                      <h3>경기도 부천시</h3>
+                    </div>
+                  </div>
+                  <div class="about__list-item card">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                      <h2>연락처</h2>
+                      <h3>010-4916-0829</h3>
+                    </div>
+                  </div>
+                  <div class="about__list-item card">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div>
+                      <h2>이메일</h2>
+                      <h3>dbwls927@gmail.com</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="section-footer">
+                © 2025. 임유진. All rights reserved.<br />
+                <small style="opacity: 0.6">Frontend Developer Portfolio</small>
+              </footer>
+
+              <label
+                for="tab-home"
+                class="tab-label"
+              ></label>
+            </section>
+
+            <!-- Project 섹션 -->
+            <input
+              type="radio"
+              name="tab"
+              id="tab-project"
+            />
+            <section class="tab-container__project">
+              <h1>SKILLS & PROJECTS</h1>
+              <div class="content">
+                <!-- Skills Section -->
+                <div class="skills__container">
+                  <h2 class="skills__title">Skills & Tools</h2>
+
+                  <div class="skills__categories">
+                    <!-- Frontend 카테고리 -->
+                    <div class="skills__category">
+                      <div class="skills__category-header">
+                        <i class="fas fa-code"></i>
+                        <h3>Frontend</h3>
+                      </div>
+                      <div class="skills__grid">
+                        <div class="skill__item confident">
+                          <i class="fab fa-html5"></i>
+                          <span>HTML5</span>
+                        </div>
+                        <div class="skill__item confident">
+                          <i class="fab fa-css3-alt"></i>
+                          <span>CSS3</span>
+                        </div>
+                        <div class="skill__item confident">
+                          <i class="fab fa-js"></i>
+                          <span>JavaScript</span>
+                        </div>
+                        <div class="skill__item learning">
+                          <i class="fab fa-react"></i>
+                          <span>React <small>(학습중)</small></span>
+                        </div>
+                        <div class="skill__item learning">
+                          <i class="fab fa-js"></i>
+                          <span>TypeScript <small>(학습중)</small></span>
+                        </div>
+                        <div class="skill__item learning">
+                          <i class="fab fa-react"></i>
+                          <span>Next.js <small>(학습중)</small></span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tools 카테고리 -->
+                    <div class="skills__category">
+                      <div class="skills__category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Tools</h3>
+                      </div>
+                      <div class="skills__grid">
+                        <div class="skill__item confident">
+                          <i class="fab fa-git-alt"></i>
+                          <span>Git</span>
+                        </div>
+                        <div class="skill__item confident">
+                          <i class="fab fa-github"></i>
+                          <span>GitHub</span>
+                        </div>
+                        <div class="skill__item confident">
+                          <i class="fas fa-code"></i>
+                          <span>VS Code</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Projects Section -->
+                <div class="projects__container">
+                  <div class="bar"></div>
+                  <h2 class="projects__title">Projects</h2>
+                  <div class="project-grid">
+                    <div class="project-card card">
+                      <h3>프로젝트 1</h3>
+                      <p>카카오톡 클론</p>
+                      <p>html css</p>
+                      <a
+                        target="_blank"
+                        href="https://u-zing.github.io/musinsa-talk/"
+                        >바로가기</a
+                      >
+                    </div>
+                    <div class="project-card card">
+                      <h3>프로젝트 2</h3>
+                      <p>그림판 클론</p>
+                    </div>
+                    <div class="project-card card">
+                      <h3>프로젝트 3</h3>
+                      <p>Momentum 클론 - todo리스트와 배경</p>
+                    </div>
+                    <div class="project-card card">
+                      <h3>프로젝트 4</h3>
+                      <p>반응형 포트폴리오 웹사이트</p>
+                      <p>html css JavaScript</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="section-footer">
+                © 2025. 임유진. All rights reserved.<br />
+                <small style="opacity: 0.6">Frontend Developer Portfolio</small>
+              </footer>
+              <label
+                for="tab-project"
+                class="tab-label"
+              ></label>
+            </section>
+
+            <!-- Contact 섹션 -->
+            <input
+              type="radio"
+              name="tab"
+              id="tab-contact"
+            />
+            <section class="tab-container__contact">
+              <h1>CONTACT</h1>
+              <div class="content">
+                <p>
+                  언제든지 연락주세요! 함께 성장할 수 있는 기회를 기다립니다.
+                </p>
+                <form class="contact-form">
+                  <input
+                    type="text"
+                    placeholder="이름"
+                    required
+                  />
+                  <input
+                    type="email"
+                    placeholder="이메일"
+                    required
+                  />
+                  <textarea
+                    placeholder="메시지"
+                    rows="5"
+                    required
+                  ></textarea>
+                  <button type="submit">메시지 보내기</button>
+                </form>
+              </div>
+              <footer class="section-footer">
+                © 2025. 임유진. All rights reserved.<br />
+                <small style="opacity: 0.6">Frontend Developer Portfolio</small>
+              </footer>
+              <label
+                for="tab-contact"
+                class="tab-label"
+              ></label>
+            </section>
+          </div>
+
+          <!-- Navigation menu -->
+          <nav class="tab-menu">
+            <label
+              for="menu-toggle"
+              class="tab-menu__toggle menu-button"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </label>
+            <label
+              for="tab-home"
+              class="tab-menu__item menu-button"
+              aria-label="홈"
+            >
+              <i class="fa-solid fa-home"></i>
+            </label>
+            <label
+              for="tab-project"
+              class="tab-menu__item menu-button"
+              aria-label="프로젝트"
+            >
+              <i class="fa-solid fa-folder"></i>
+            </label>
+            <label
+              for="tab-contact"
+              class="tab-menu__item menu-button"
+              aria-label="연락하기"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </label>
+            <a
+              href="https://github.com/u-zing"
+              target="_blank"
+              class="tab-menu__item menu-button"
+              aria-label="GitHub"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://zing829.tistory.com/"
+              target="_blank"
+              class="tab-menu__item menu-button"
+              aria-label="블로그"
+            >
+              <i class="fa-solid fa-bold"></i>
+            </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
     <script
       src="https://kit.fontawesome.com/9076bbc1a6.js"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
   </body>
 </html>
