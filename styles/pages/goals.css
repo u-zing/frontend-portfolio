@@ -1,0 +1,321 @@
+.tab-container__contact .content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.growth-story,
+.learning-roadmap,
+.tech-interests,
+.contact-info {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.23);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  text-align: left;
+  /* 애니메이션 초기 상태 */
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* 스크롤 시 보이는 상태 */
+.growth-story.animate,
+.learning-roadmap.animate,
+.tech-interests.animate,
+.contact-info.animate {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* 각 요소별 지연 시간 추가 */
+.growth-story {
+  transition-delay: 0.1s;
+}
+
+.learning-roadmap {
+  transition-delay: 0.2s;
+}
+
+.tech-interests {
+  transition-delay: 0.3s;
+}
+
+.contact-info {
+  transition-delay: 0.4s;
+}
+
+.growth-story h2,
+.learning-roadmap h2,
+.tech-interests h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* 제목 애니메이션 */
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s ease 0.3s;
+}
+
+/* 제목 애니메이션 활성화 */
+.animate .growth-story h2,
+.animate .learning-roadmap h2,
+.animate .tech-interests h2,
+.growth-story.animate h2,
+.learning-roadmap.animate h2,
+.tech-interests.animate h2 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.growth-story p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  /* 텍스트 애니메이션 */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease 0.5s;
+}
+
+.growth-story.animate p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Learning Roadmap */
+.learning-roadmap ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.learning-roadmap li {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  /* 리스트 아이템 애니메이션 */
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.5s ease;
+}
+
+.learning-roadmap.animate li:nth-child(1) {
+  transition-delay: 0.6s;
+}
+
+.learning-roadmap.animate li:nth-child(2) {
+  transition-delay: 0.7s;
+}
+
+.learning-roadmap.animate li:nth-child(3) {
+  transition-delay: 0.8s;
+}
+
+.learning-roadmap.animate li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.learning-roadmap li::before {
+  content: "•";
+  color: #64ffda;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.4s ease;
+}
+
+.learning-roadmap.animate li::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.learning-roadmap li strong {
+  color: #64ffda;
+  font-weight: 600;
+}
+
+/* Tech Interests */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  display: inline-block;
+  /* 태그 애니메이션 */
+  opacity: 0;
+  transform: translateY(30px) scale(0.8);
+}
+
+.tech-interests.animate .tech-tag:nth-child(1) {
+  transition-delay: 0.6s;
+}
+.tech-interests.animate .tech-tag:nth-child(2) {
+  transition-delay: 0.7s;
+}
+.tech-interests.animate .tech-tag:nth-child(3) {
+  transition-delay: 0.8s;
+}
+.tech-interests.animate .tech-tag:nth-child(4) {
+  transition-delay: 0.9s;
+}
+.tech-interests.animate .tech-tag:nth-child(5) {
+  transition-delay: 1s;
+}
+
+.tech-interests.animate .tech-tag {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Contact Info */
+.contact-info {
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(100, 255, 218, 0.1) 0%,
+    rgba(118, 75, 162, 0.1) 100%
+  );
+  border: 1px solid rgba(100, 255, 218, 0.2);
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease 0.5s;
+}
+
+.contact-info.animate p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: rgba(100, 255, 218, 0.1);
+  border: 2px solid #64ffda;
+  border-radius: 8px;
+  color: #64ffda;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.contact-info.animate .contact-link:nth-child(1) {
+  transition-delay: 0.7s;
+}
+
+.contact-info.animate .contact-link:nth-child(2) {
+  transition-delay: 0.8s;
+}
+
+.contact-info.animate .contact-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-link:hover {
+  background: rgba(100, 255, 218, 0.2);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(100, 255, 218, 0.2);
+}
+
+.contact-link i {
+  font-size: 1.2rem;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .tab-container__contact .content {
+    padding: 1rem;
+  }
+
+  .growth-story,
+  .learning-roadmap,
+  .tech-interests,
+  .contact-info {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .growth-story h2,
+  .learning-roadmap h2,
+  .tech-interests h2 {
+    font-size: 1.3rem;
+  }
+
+  .tech-tags {
+    justify-content: center;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-link {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .growth-story h2,
+  .learning-roadmap h2,
+  .tech-interests h2 {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.3rem;
+  }
+
+  .tech-tag {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}

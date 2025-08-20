@@ -3,7 +3,6 @@ const introContainer = document.querySelector(".intro-container");
 const portfolioContainer = document.querySelector(".portfolio-container");
 const backButton = document.querySelector(".back-button");
 
-// 나머지 코드는 동일
 folderIcon.addEventListener("click", () => {
   introContainer.classList.add("hidden");
 
@@ -31,4 +30,27 @@ folderIcon.addEventListener("mouseenter", () => {
 
 folderIcon.addEventListener("mouseleave", () => {
   folderIcon.style.transform = "translateY(0) scale(1) rotateY(0deg)";
+});
+// 스크롤 애니메이션 JavaScript
+document.addEventListener("DOMContentLoaded", function () {
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate");
+      }
+    });
+  }, observerOptions);
+
+  const animateElements = document.querySelectorAll(
+    ".growth-story, .learning-roadmap, .tech-interests, .contact-info"
+  );
+
+  animateElements.forEach((element) => {
+    observer.observe(element);
+  });
 });
