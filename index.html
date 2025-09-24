@@ -118,6 +118,7 @@
                   </div>
                 </div>
               </div>
+
               <footer class="section-footer">
                 © 2025. 임유진. All rights reserved.<br />
                 <small style="opacity: 0.6">Frontend Developer Portfolio</small>
@@ -162,17 +163,17 @@
                           <i class="fab fa-js"></i>
                           <span>JavaScript</span>
                         </div>
-                        <div class="skill__item learning">
+                        <div class="skill__item confident">
                           <i class="fab fa-react"></i>
-                          <span>React <small>(학습중)</small></span>
+                          <span>React </span>
                         </div>
-                        <div class="skill__item learning">
+                        <div class="skill__item confident">
                           <i class="fab fa-js"></i>
-                          <span>TypeScript <small>(학습중)</small></span>
+                          <span>TypeScript</span>
                         </div>
-                        <div class="skill__item learning">
+                        <div class="skill__item confident">
                           <i class="fab fa-react"></i>
-                          <span>Next.js <small>(학습중)</small></span>
+                          <span>Next.js</span>
                         </div>
                       </div>
                     </div>
@@ -206,42 +207,372 @@
                   <div class="bar"></div>
                   <h2 class="projects__title">Projects</h2>
                   <div class="project-grid">
-                    <div class="project-card card">
+                    <div
+                      class="project-card card"
+                      onclick="openProjectModal('project1')"
+                    >
                       <h3>프로젝트 1</h3>
                       <p>카카오톡 클론</p>
-                      <p>html css</p>
-                      <a
-                        target="_blank"
-                        href="https://u-zing.github.io/musinsa-talk/"
-                        >바로가기</a
-                      >
+                      <div class="hover-overlay">
+                        <span class="click-text">클릭하여 자세히 보기</span>
+                      </div>
                     </div>
-                    <div class="project-card card">
+
+                    <div
+                      class="project-card card"
+                      onclick="openProjectModal('project2')"
+                    >
                       <h3>프로젝트 2</h3>
                       <p>그림판 클론</p>
+                      <div class="hover-overlay">
+                        <span class="click-text">클릭하여 자세히 보기</span>
+                      </div>
                     </div>
-                    <div class="project-card card">
+
+                    <div
+                      class="project-card card"
+                      onclick="openProjectModal('project3')"
+                    >
                       <h3>프로젝트 3</h3>
-                      <p>Momentum 클론 - todo리스트와 배경</p>
-                      <a
-                        target="_blank"
-                        href="https://u-zing.github.io/momentum-universe/"
-                        >바로가기</a
-                      >
+                      <p>Momentum 클론</p>
+                      <div class="hover-overlay">
+                        <span class="click-text">클릭하여 자세히 보기</span>
+                      </div>
                     </div>
-                    <div class="project-card card">
+
+                    <div
+                      class="project-card card"
+                      onclick="openProjectModal('project4')"
+                    >
                       <h3>프로젝트 4</h3>
                       <p>반응형 포트폴리오 웹사이트</p>
-                      <p>html css JavaScript</p>
-                      <a
-                        target="_blank"
-                        href="https://u-zing.github.io/frontend-portfolio/"
-                        >바로가기</a
+                      <div class="hover-overlay">
+                        <span class="click-text">클릭하여 자세히 보기</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 모달 배경 오버레이 -->
+                <div
+                  class="modal-overlay"
+                  onclick="closeAllModals()"
+                ></div>
+
+                <div
+                  id="project1-modal"
+                  class="project-modal"
+                >
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2>무신사톡</h2>
+                      <span
+                        class="close-btn"
+                        onclick="closeModal('project1')"
+                        >&times;</span
                       >
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="project-preview-section">
+                        <div class="project-image">
+                          <img
+                            src="imges/musinsa-talk-preview2.png"
+                            alt="무신사톡 프로젝트 스크린샷"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="project-info-section">
+                        <div class="project-description">
+                          <h3>프로젝트 개요</h3>
+                          <p>
+                            Musinsa Talk은 무신사 브랜드의 감성을 바탕으로
+                            제작한 카카오톡 클론 웹앱입니다. HTML과 CSS만으로
+                            UI를 구현하며, 레이아웃 구성, 반응형 스타일링,
+                            컴포넌트화된 디자인 요소 등을 직접 제작했습니다. 본
+                            프로젝트를 통해 퍼블리싱 역량과 디자인 감각을 동시에
+                            발전시켰습니다.
+                          </p>
+
+                          <h3>주요 기능</h3>
+                          <ul>
+                            <li>
+                              <strong>Friends 화면:</strong> 친구 목록 및 프로필
+                              표시
+                            </li>
+                            <li>
+                              <strong>Find 화면:</strong> 무신사 상품이미지
+                              자동슬라이드 애니메이션과 친구 찾기 UI 구현
+                            </li>
+                            <li>
+                              <strong>반응형 디자인:</strong> 모바일 최적화
+                            </li>
+                          </ul>
+                        </div>
+
+                        <div class="tech-stack-section">
+                          <h3>기술 스택</h3>
+                          <div class="tech-badges">
+                            <span class="tech-badge html">HTML5</span>
+                            <span class="tech-badge css">CSS3</span>
+                            <span class="tech-badge responsive"
+                              >Responsive Design</span
+                            >
+                          </div>
+                        </div>
+
+                        <div class="project-links">
+                          <a
+                            href="https://u-zing.github.io/musinsa-talk/"
+                            target="_blank"
+                            class="btn-demo"
+                          >
+                            <i class="fas fa-external-link-alt"></i> 라이브 데모
+                          </a>
+                          <a
+                            href="https://github.com/u-zing/musinsa-talk"
+                            target="_blank"
+                            class="btn-github"
+                          >
+                            <i class="fab fa-github"></i> GitHub
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 프로젝트 2: 그림판 모달 -->
+                <div
+                  id="project2-modal"
+                  class="project-modal"
+                >
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2>그림판 클론</h2>
+                      <span
+                        class="close-btn"
+                        onclick="closeModal('project2')"
+                        >&times;</span
+                      >
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="project-preview-section">
+                        <div class="project-image">
+                          <img
+                            src="imges/paint-app-preview.png"
+                            alt="그림판 클론 프로젝트 스크린샷"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="project-info-section">
+                        <div class="project-description">
+                          <h3>프로젝트 개요</h3>
+                          <p>
+                            HTML5 Canvas API와 JavaScript를 활용하여
+                            브라우저에서 직접 사용할 수 있는 웹 기반 그림 그리기
+                            애플리케이션입니다. 데스크톱 그림판의 핵심 기능들을
+                            웹 환경으로 구현하여 별도의 소프트웨어 설치 없이도
+                            창작 활동이 가능합니다.
+                          </p>
+
+                          <h3>주요 기능</h3>
+                          <ul>
+                            <li>그리기/채우기 모드</li>
+                            <li>색상 팔레트</li>
+                            <li>선 굵기 조절</li>
+                            <li>이미지 삽입 및 파일저장</li>
+                          </ul>
+                        </div>
+
+                        <div class="tech-stack-section">
+                          <h3>기술 스택</h3>
+                          <div class="tech-badges">
+                            <span class="tech-badge html">HTML5</span>
+                            <span class="tech-badge css">CSS3</span>
+                            <span class="tech-badge js">JavaScript</span>
+                          </div>
+                        </div>
+
+                        <div class="project-links">
+                          <a
+                            href="https://u-zing.github.io/paint-board/"
+                            target="_blank"
+                            class="btn-demo"
+                          >
+                            <i class="fas fa-external-link-alt"></i> 라이브 데모
+                          </a>
+                          <a
+                            href="https://github.com/u-zing/paint-board"
+                            target="_blank"
+                            class="btn-github"
+                          >
+                            <i class="fab fa-github"></i> GitHub
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 프로젝트 3: Momentum 모달 -->
+                <div
+                  id="project3-modal"
+                  class="project-modal"
+                >
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2>Momentum Universe</h2>
+                      <span
+                        class="close-btn"
+                        onclick="closeModal('project3')"
+                        >&times;</span
+                      >
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="project-preview-section">
+                        <div class="project-image">
+                          <img
+                            src="imges/momentum-universe-preview2.png"
+                            alt="Momentum Universe 프로젝트 스크린샷"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="project-info-section">
+                        <div class="project-description">
+                          <h3>프로젝트 개요</h3>
+                          <p>
+                            Chrome의 Momentum 확장프로그램을 클론한 할 일 관리
+                            및 배경화면 서비스입니다. Local Storage를 활용하여
+                            사용자 데이터를 브라우저에 저장하고, 외부 API 연동을
+                            통해 실시간 날씨 정보를 표시합니다.
+                          </p>
+
+                          <h3>주요 기능</h3>
+                          <ul>
+                            <li>실시간 시계</li>
+                            <li>Todo 리스트 관리</li>
+                            <li>날씨 정보 : API</li>
+                            <li>배경화면 변경 / 배경음악 on/off</li>
+                          </ul>
+                        </div>
+
+                        <div class="tech-stack-section">
+                          <h3>기술 스택</h3>
+                          <div class="tech-badges">
+                            <span class="tech-badge html">HTML5</span>
+                            <span class="tech-badge css">CSS3</span>
+                            <span class="tech-badge js">JavaScript</span>
+                          </div>
+                        </div>
+
+                        <div class="project-links">
+                          <a
+                            href="https://u-zing.github.io/momentum-universe/"
+                            target="_blank"
+                            class="btn-demo"
+                          >
+                            <i class="fas fa-external-link-alt"></i> 라이브 데모
+                          </a>
+                          <a
+                            href="https://github.com/u-zing/momentum-universe"
+                            target="_blank"
+                            class="btn-github"
+                          >
+                            <i class="fab fa-github"></i> GitHub
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 프로젝트 4: 포트폴리오 모달 -->
+                <div
+                  id="project4-modal"
+                  class="project-modal"
+                >
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2>Portfolio Website</h2>
+                      <span
+                        class="close-btn"
+                        onclick="closeModal('project4')"
+                        >&times;</span
+                      >
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="project-preview-section">
+                        <div class="project-image">
+                          <img
+                            src="imges/portfolio-website-preview2.png"
+                            alt="포트폴리오 웹사이트 스크린샷"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="project-info-section">
+                        <div class="project-description">
+                          <h3>프로젝트 개요</h3>
+                          <p>
+                            반응형 디자인이 적용된 개인 포트폴리오
+                            웹사이트입니다. 라디오 버튼을 활용한 CSS 기반 탭
+                            네비게이션과 모달을 통한 프로젝트 상세 설명 기능을
+                            구현했습니다. 폴더와 파일을 열어보는 듯한 직관적인
+                            UI/UX 디자인으로 사용자 친화적인 인터페이스를
+                            제공합니다.
+                          </p>
+
+                          <h3>주요 기능</h3>
+                          <ul>
+                            <li>
+                              라디오 버튼 기반 탭 네비게이션 (JavaScript 없이
+                              구현)
+                            </li>
+                            <li>모든 디바이스 대응 반응형 레이아웃</li>
+                            <li>모달을 활용한 프로젝트 상세 설명</li>
+                            <li>CSS 애니메이션 및 호버 효과</li>
+                            <li>직관적인 폴더/파일 시스템 UI</li>
+                          </ul>
+                        </div>
+
+                        <div class="tech-stack-section">
+                          <h3>기술 스택</h3>
+                          <div class="tech-badges">
+                            <span class="tech-badge html">HTML5</span>
+                            <span class="tech-badge css">CSS3</span>
+                            <span class="tech-badge js">JavaScript</span>
+                          </div>
+                        </div>
+
+                        <div class="project-links">
+                          <a
+                            href="https://u-zing.frontend-portfolio/"
+                            target="_blank"
+                            class="btn-demo"
+                          >
+                            <i class="fas fa-external-link-alt"></i> 라이브 데모
+                          </a>
+                          <a
+                            href="https://github.com/u-zing"
+                            target="_blank"
+                            class="btn-github"
+                          >
+                            <i class="fab fa-github"></i> GitHub
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               <footer class="section-footer">
                 © 2025. 임유진. All rights reserved.<br />
                 <small style="opacity: 0.6">Frontend Developer Portfolio</small>
