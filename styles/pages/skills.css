@@ -1,4 +1,3 @@
-/* Skills Section Styles */
 .skills__container {
   width: 100%;
   max-width: 1200px;
@@ -16,7 +15,6 @@
   letter-spacing: 2px;
 }
 
-/* Projects Section Styles */
 .projects__container {
   width: 100%;
   max-width: 1200px;
@@ -149,9 +147,8 @@
   opacity: 1;
 }
 
-/* 카테고리별 아이콘 색상 */
 .skills__category:nth-child(1) .skills__category-header i {
-  color: #ff7043; /* Frontend - 주황색 */
+  color: #ff7043;
 }
 
 .skills__category:nth-child(1) .skill__item i {
@@ -159,14 +156,13 @@
 }
 
 .skills__category:nth-child(2) .skills__category-header i {
-  color: #42a5f5; /* Tools - 파란색 */
+  color: #42a5f5;
 }
 
 .skills__category:nth-child(2) .skill__item i {
   color: #64b5f6;
 }
 
-/* 특정 기술 아이콘 색상 오버라이드 */
 .skill__item .fa-html5 {
   color: #e44d26 !important;
 }
@@ -183,7 +179,6 @@
   color: #61dafb !important;
 }
 
-/* TypeScript 스타일 */
 .skill__item:has(span:contains("TypeScript")) .fa-js {
   color: #3178c6 !important;
 }
@@ -198,4 +193,103 @@
 
 .projects__container .bar {
   width: 70%;
+}
+@media (min-width: 1440px) {
+  .skills__container,
+  .projects__container {
+    max-width: 1400px;
+  }
+
+  .skills__title,
+  .projects__title {
+    font-size: 3rem;
+  }
+
+  .project-grid {
+    max-width: 1200px;
+  }
+}
+
+/* 작은 데스크톱 & 태블릿 가로 (1024px ~ 1200px) */
+@media (max-width: 1200px) {
+  .skills__container,
+  .projects__container {
+    max-width: 1000px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+/* 태블릿 (768px ~ 1024px) */
+@media (max-width: 1024px) {
+  .skills__categories {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .skills__category {
+    padding: 2rem;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .modal-content {
+    max-width: 900px;
+  }
+}
+
+/* 태블릿 세로 & 큰 모바일 (600px ~ 768px) */
+@media (max-width: 768px) {
+  .skills__title,
+  .projects__title {
+    font-size: 2rem;
+    margin: 1.5rem 0 2rem;
+  }
+
+  .skills__container,
+  .projects__container {
+    padding: 0 1.5rem;
+  }
+
+  .skills__categories {
+    gap: 2rem;
+  }
+
+  .skills__category {
+    padding: 1.5rem;
+  }
+
+  .skills__category-header {
+    margin-bottom: 1.2rem;
+  }
+
+  .skills__category-header i {
+    font-size: 1.5rem;
+  }
+
+  .skills__category-header h3 {
+    font-size: 1.4rem;
+  }
+
+  .skills__grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.8rem;
+  }
+
+  .skill__item {
+    padding: 0.8rem 1rem;
+  }
+
+  .skill__item i {
+    font-size: 1.2rem;
+  }
 }
