@@ -8,7 +8,8 @@
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgb(255, 255, 255);
+  color: #000000;
   padding: 2rem;
   border-radius: 15px;
   backdrop-filter: blur(10px);
@@ -214,7 +215,8 @@
 }
 
 .project-description p {
-  color: #34495e;
+  color: #000000;
+  font-weight: 400;
   line-height: 1.6;
   margin: 0 0 18px 0;
   font-size: 1rem;
@@ -226,6 +228,7 @@
   padding-left: 22px;
   font-size: 1rem;
   list-style: none;
+  font-weight: 400;
 }
 
 .project-description li {

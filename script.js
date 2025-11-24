@@ -323,3 +323,22 @@ document.addEventListener("DOMContentLoaded", function () {
   // 반응형 모달 크기 조정
   handleModalResize();
 });
+
+const skillItems = document.querySelectorAll(".skill__item");
+
+skillItems.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    const icon = item.querySelector("i");
+    if (icon) {
+      icon.style.transform = "rotate(360deg)";
+      icon.style.transition = "transform 0.6s ease";
+    }
+  });
+
+  item.addEventListener("mouseleave", () => {
+    const icon = item.querySelector("i");
+    if (icon) {
+      icon.style.transform = "rotate(0deg)";
+    }
+  });
+});
